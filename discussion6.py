@@ -99,7 +99,7 @@ class HorseRaces:
             if time < fastest_time:
                 fastest_race = race
                 fastest_time = time
-                
+
         return fastest_race, fastest_time
 
 ###############################################################################
@@ -114,7 +114,15 @@ class HorseRaces:
             A dictionary of tuples of each horse, with their fastest race and time.
             EXAMPLE: {"Oguri Cap": ("Tenno Sho Fall", 16.6), "Mejiro McQueen": ("Tenno Sho Fall", 16.1)}
         '''
-        pass
+        
+
+        personal_bests = {}
+
+        for horse in self.race_dict:
+            fastest_race, fastest_time = self.horse_fastest_race(horse)
+            personal_bests[horse] = (fastest_race, fastest_time)
+
+        return personal_bests
 
 ###############################################################################
 ##### TASK 4
